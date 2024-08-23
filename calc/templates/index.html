@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماشین حساب من</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <label>عدد اول : </label>
+        <input type="text" name="number1">
+        <br>
+        <br>
+        <label>عدد دوم : </label>
+        <input type="text" name="number2">
+        <br>
+        <br>
+
+        <label>عملگر : </label>
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <br>
+        <button type="submit">پاسخ</button>
+        <br>
+        <label>پاسخ : </label>
+        <input type="text" name="result" value="{{ answer }}">
+
+    </form>
+</body>
+</html>
